@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1526" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#avatarGrad)" rx="16" />
+  <rect width="396" height="396" x="2" y="2" fill="none" stroke="#00f0ff" stroke-width="2" stroke-opacity="0.3" rx="14" />
+  
+  <!-- Tech Grid Lines -->
+  <path d="M0,100 L400,100 M0,200 L400,200 M0,300 L400,300 M100,0 L100,400 M200,0 L200,400 M300,0 L300,400" stroke="#00f0ff" stroke-opacity="0.05" stroke-width="1" />
+  
+  <!-- Avatar Silhouette Icon -->
+  <circle cx="200" cy="150" r="55" fill="none" stroke="url(#cyanGlow)" stroke-width="4" />
+  <path d="M120,310 C120,230 280,230 280,310" fill="none" stroke="url(#cyanGlow)" stroke-width="4" />
+  <circle cx="200" cy="150" r="25" fill="#00f0ff" fill-opacity="0.2" />
+
+  <!-- Text Badge -->
+  <rect x="60" y="330" width="280" height="36" rx="8" fill="#070a12" stroke="#00f0ff" stroke-opacity="0.4" />
+  <text x="200" y="353" font-family="sans-serif" font-size="13" font-weight="bold" fill="#00f0ff" text-anchor="middle" letter-spacing="1">YOUR AVATAR IMAGE (1:1)</text>
+</svg>

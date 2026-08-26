@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omer Akcali | Senior Unity Game Developer & Tech Artist Portfolio</title>
+    <meta name="description" content="Portfolio of Omer Akcali, a Senior Unity Game Developer & Technical Artist specializing in C# architecture, URP/HDRP shaders, 3D gameplay, and high-performance game systems.">
+    <meta name="keywords" content="Unity Developer, Game Developer Portfolio, C# Engineer, Technical Artist, Shader Graph, URP, HDRP, WebGL, Game Programmer">
+    
+    <!-- Open Graph for Social Sharing / GitHub Links -->
+    <meta property="og:title" content="Omer Akcali | Unity Game Developer Portfolio">
+    <meta property="og:description" content="Explore shipped games, custom shaders, C# mechanics, and interactive WebGL demos.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Interactive Canvas Particle Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Top HUD Bar / Navbar -->
+    <header class="hud-header" id="navbar">
+        <div class="hud-nav-container">
+            <a href="#hero" class="brand-logo">
+                <span class="logo-icon"><i class="fa-solid fa-cubes-stacked"></i></span>
+                <span class="logo-text">OMER<span class="highlight">.UNITY</span></span>
+                <span class="logo-badge">v2026.3</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active"><i class="fa-solid fa-terminal"></i> Core</a>
+                <a href="#projects" class="nav-link"><i class="fa-solid fa-gamepad"></i> Games</a>
+                <a href="#skills" class="nav-link"><i class="fa-solid fa-microchip"></i> Tech Matrix</a>
+                <a href="#experience" class="nav-link"><i class="fa-solid fa-code-branch"></i> Timeline</a>
+                <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="sfx-toggle-btn" id="sfx-toggle" title="Toggle UI Sound Effects">
+                    <i class="fa-solid fa-volume-high" id="sfx-icon"></i>
+                    <span class="sfx-status">SFX ON</span>
+                </button>
+                <a href="#contact" class="btn btn-hud-primary">
+                    <span class="status-dot green"></span> Hire Developer
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Engine Stats Overlay (HUD Overlay) -->
+    <div class="hud-overlay-stats">
+        <div class="hud-stat-item"><span class="hud-label">FPS:</span> <span id="hud-fps-val" class="hud-val cyan">60.0</span></div>
+        <div class="hud-stat-item"><span class="hud-label">ENGINE:</span> <span class="hud-val purple">UNITY 6.0</span></div>
+        <div class="hud-stat-item"><span class="hud-label">MEM:</span> <span class="hud-val green">12.4 MB</span></div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="status-badge-wrapper">
+                        <span class="hud-badge green-glow"><i class="fa-solid fa-circle-check"></i> Available for Full-Time & Freelance Contracts</span>
+                        <span class="hud-badge purple-glow"><i class="fa-solid fa-vr-cardboard"></i> 3D / URP / HDRP Specialist</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Building Immersive <br>
+                        <span class="gradient-text-cyan">3D Worlds & Engine Architecture</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Hi, I'm <strong>Omer Akcali</strong> — a Senior <strong>Unity Game Developer</strong> with 5+ years of experience shipping commercial <strong>Steam PC titles</strong> (like <em>Wavecrashers</em> & <em>Everything Store</em>) and <strong>10+ Mobile Games</strong> (like <em>Fiona's Farm</em>). I specialize in Unity URP, dynamic LiveOps events, timed challenges, adventure quests, and performance-optimized C# architecture.
+                    </p>
+
+                    <div class="hero-tags">
+                        <span class="tag"><i class="fa-solid fa-code"></i> C# Architecture</span>
+                        <span class="tag"><i class="fa-brands fa-steam"></i> Steam & Mobile Games</span>
+                        <span class="tag"><i class="fa-solid fa-cube"></i> Unity URP</span>
+                        <span class="tag"><i class="fa-solid fa-bolt"></i> LiveOps & Timed Events</span>
+                        <span class="tag"><i class="fa-solid fa-compass"></i> Adventure Quests</span>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-gradient-cyan btn-lg">
+                            <i class="fa-solid fa-play"></i> Explore Games
+                        </a>
+                        <button class="btn btn-surface btn-lg" id="download-cv-btn">
+                            <i class="fa-solid fa-file-arrow-down"></i> Resume / CV
+                        </button>
+                    </div>
+
+                    <div class="social-quick-bar">
+                        <span class="quick-label">Connect:</span>
+                        <a href="https://linkedin.com/in/omerakcali/" target="_blank" class="social-icon-btn" title="LinkedIn: linkedin.com/in/omerakcali/"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <button class="social-icon-btn" title="Discord: baddog42" onclick="navigator.clipboard.writeText('baddog42'); if(window.showToast) window.showToast('Discord handle baddog42 copied!'); else alert('Discord handle baddog42 copied!');">
+                            <i class="fa-brands fa-discord"></i>
+                        </button>
+                        <a href="https://github.com" target="_blank" class="social-icon-btn" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                        <button class="social-icon-btn copy-email-btn" id="copy-email-btn" title="Copy Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-frame-wrapper">
+                        <!-- Futuristic HUD Frame corners -->
+                        <div class="corner-tl"></div>
+                        <div class="corner-tr"></div>
+                        <div class="corner-bl"></div>
+                        <div class="corner-br"></div>
+                        
+                        <!-- Developer Avatar Placeholder: Replace avatar.svg with your image (e.g., avatar.jpg or avatar.png) -->
+                        <img src="assets/images/avatar.svg" alt="Unity Game Developer Avatar" class="hero-avatar-img">
+                        <div class="avatar-overlay-card">
+                            <div class="dev-card-info">
+                                <span class="dev-role">Senior Unity Developer</span>
+                                <span class="dev-name">Omer Akcali</span>
+                            </div>
+                            <div class="dev-card-stats">
+                                <div class="mini-stat">
+                                    <span class="num">3</span>
+                                    <span class="lbl"><i class="fa-brands fa-steam"></i> Steam</span>
+                                </div>
+                                <div class="mini-stat">
+                                    <span class="num">10+</span>
+                                    <span class="lbl"><i class="fa-solid fa-mobile-screen-button"></i> Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar-section">
+            <div class="container stats-bar-container">
+                <div class="stat-box">
+                    <i class="fa-brands fa-steam stat-icon cyan"></i>
+                    <div class="stat-text">
+                        <h3 class="counter" data-target="3">0</h3>
+                        <p>Steam Games</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-mobile-screen-button stat-icon purple"></i>
+                    <div class="stat-text">
+                        <h3 class="counter" data-target="10" data-suffix="+">0</h3>
+                        <p>Mobile Games</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-clock stat-icon gold"></i>
+                    <div class="stat-text">
+                        <h3 class="counter" data-target="5" data-suffix="+">0</h3>
+                        <p>Years Unity Experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-subtitle"><i class="fa-solid fa-gamepad"></i> PORTFOLIO SHOWCASE</div>
+                    <h2 class="section-title">Shipped & Featured <span class="gradient-text-cyan">Unity Projects</span></h2>
+                    <p class="section-desc">Selected titles showcasing 3D gameplay engineering, mobile optimization, Shader Graph tech art, and C# systems.</p>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="project-filters" id="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects (7)</button>
+                    <button class="filter-btn" data-filter="steam"><i class="fa-brands fa-steam"></i> Steam Games (2)</button>
+                    <button class="filter-btn" data-filter="mobile"><i class="fa-solid fa-mobile-screen-button"></i> Casual (1)</button>
+                    <button class="filter-btn" data-filter="hybrid"><i class="fa-solid fa-gamepad"></i> Hybrid Casual (4)</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projects-grid">
+
+                    <!-- Project Card 1 (Wavecrashers - Steam Title) -->
+                    <div class="project-card" data-category="steam">
+                        <div class="card-media animated-game-preview" data-preview="assets/images/wavecrashers-header.jpg,assets/images/wavecrashers-ss-1.jpg,assets/images/wavecrashers-ss-2.jpg,assets/images/wavecrashers-ss-3.jpg,assets/images/wavecrashers-ss-4.jpg">
+                            <img src="assets/images/wavecrashers-header.jpg" alt="Wavecrashers Steam Game" class="preview-img-target" loading="lazy">
+                            <div class="card-badge"><i class="fa-brands fa-steam"></i> Steam Title</div>
+                            <div class="live-gif-pill"><i class="fa-solid fa-play"></i> LIVE PREVIEW</div>
+                            <div class="card-overlay">
+                                <button class="btn btn-cyan btn-sm open-modal-btn" data-project="wavecrashers">
+                                    <i class="fa-solid fa-circle-info"></i> Details & Gallery
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header-row">
+                                <h3 class="card-title">Wavecrashers</h3>
+                                <span class="engine-tag"><i class="fa-solid fa-cube"></i> Unity URP</span>
+                            </div>
+                            <p class="card-text">
+                                Hold the line or everything falls. A 3-player co-op strategy game where heroes defend against relentless waves of enemies. Build powerful synergies, push your limits, and survive the chaos with friends or AI bots.
+                            </p>
+                            <div class="card-tags">
+                                <span>Steam App ID: 3664090</span>
+                                <span>3-Player Co-Op</span>
+                                <span>Hero Mastery</span>
+                                <span>Lane Defense</span>
+                                <span>Bot AI & Synergies</span>
+                            </div>
+                            <div class="card-footer-actions">
+                                <button class="btn btn-text open-modal-btn" data-project="wavecrashers">
+                                    Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <div class="card-links">
+                                    <a href="https://store.steampowered.com/app/3664090/Wavecrashers/" target="_blank" title="View Wavecrashers on Steam"><i class="fa-brands fa-steam"></i> Steam Store</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 (Everything Store - Steam Title) -->
+                    <div class="project-card" data-category="steam">
+                        <div class="card-media animated-game-preview" data-preview="assets/images/everything-store-header.jpg,assets/images/everything-store-ss-1.jpg,assets/images/everything-store-ss-2.jpg,assets/images/everything-store-ss-3.jpg,assets/images/everything-store-ss-4.jpg">
+                            <img src="assets/images/everything-store-header.jpg" alt="Everything Store Steam Game" class="preview-img-target" loading="lazy">
+                            <div class="card-badge"><i class="fa-brands fa-steam"></i> Steam Title</div>
+                            <div class="live-gif-pill"><i class="fa-solid fa-play"></i> LIVE PREVIEW</div>
+                            <div class="card-overlay">
+                                <button class="btn btn-cyan btn-sm open-modal-btn" data-project="everything-store">
+                                    <i class="fa-solid fa-circle-info"></i> Details & Gallery
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header-row">
+                                <h3 class="card-title">Everything Store</h3>
+                                <span class="engine-tag"><i class="fa-solid fa-cube"></i> Unity URP</span>
+                            </div>
+                            <p class="card-text">
+                                Manage your own thrift shop! Buy unique items from sellers, arrange inventory inside your store, and sell them by negotiating with dynamic NPC customers.
+                            </p>
+                            <div class="card-tags">
+                                <span>Steam App ID: 3975960</span>
+                                <span>Shop Simulation</span>
+                                <span>Customer Haggling</span>
+                                <span>Inventory Grid</span>
+                            </div>
+                            <div class="card-footer-actions">
+                                <button class="btn btn-text open-modal-btn" data-project="everything-store">
+                                    Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <div class="card-links">
+                                    <a href="https://store.steampowered.com/app/3975960/Everything_Store/" target="_blank" title="View Everything Store on Steam"><i class="fa-brands fa-steam"></i> Steam Store</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 (Fiona's Farm - Mobile Title) -->
+                    <div class="project-card" data-category="mobile">
+                        <div class="card-media animated-game-preview" data-preview="assets/images/fionas-farm-cover.jpg,assets/images/fionas-farm-ss-1.jpg,assets/images/fionas-farm-ss-2.jpg,assets/images/fionas-farm-ss-3.jpg,assets/images/fionas-farm-ss-5.jpg">
+                            <img src="assets/images/fionas-farm-cover.jpg" alt="Fiona's Farm Mobile Game" class="preview-img-target" loading="lazy">
+                            <div class="card-badge"><i class="fa-solid fa-mobile-screen-button"></i> iOS & Android</div>
+                            <div class="live-gif-pill"><i class="fa-solid fa-play"></i> LIVE PREVIEW</div>
+                            <div class="card-overlay">
+                                <button class="btn btn-cyan btn-sm open-modal-btn" data-project="fionas-farm">
+                                    <i class="fa-solid fa-circle-info"></i> Details & Gallery
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header-row">
+                                <h3 class="card-title">Fiona's Farm</h3>
+                                <span class="engine-tag"><i class="fa-solid fa-cube"></i> Unity Mobile</span>
+                            </div>
+                            <p class="card-text">
+                                Farm building & adventure quest title! Features dynamic LiveOps events, time-limited seasonal challenges, story quests, and high performance mobile optimization.
+                            </p>
+                            <div class="card-tags">
+                                <span>iOS & Android</span>
+                                <span>Casual Mobile</span>
+                                <span>LiveOps Events</span>
+                                <span>Timed Events</span>
+                                <span>Adventure Quests</span>
+                            </div>
+                            <div class="card-footer-actions">
+                                <button class="btn btn-text open-modal-btn" data-project="fionas-farm">
+                                    Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <div class="card-links">
+                                    <a href="https://play.google.com/store/apps/details?id=games.ace.fionasfarm&hl=tr" target="_blank" title="Google Play Store"><i class="fa-brands fa-google-play"></i></a>
+                                    <a href="https://apps.apple.com/tr/app/fionas-farm/id1585193132" target="_blank" title="iOS App Store"><i class="fa-brands fa-app-store"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 (Hybrid Casual: Unblock Cars Traffic Control) -->
+                    <div class="project-card" data-category="hybrid">
+                        <div class="card-media animated-game-preview" data-preview="assets/images/traffic-jam-escape-cover.jpg,assets/images/traffic-jam-escape-ss-2.jpg,assets/images/traffic-jam-escape-ss-3.jpg,assets/images/traffic-jam-escape-ss-4.jpg,assets/images/traffic-jam-escape-ss-5.jpg">
+                            <img src="assets/images/traffic-jam-escape-cover.jpg" alt="Unblock Cars: Traffic Control" class="preview-img-target" loading="lazy">
+                            <div class="card-badge"><i class="fa-solid fa-gamepad"></i> Hybrid Casual</div>
+                            <div class="live-gif-pill"><i class="fa-solid fa-play"></i> LIVE PREVIEW</div>
+                            <div class="card-overlay">
+                                <button class="btn btn-cyan btn-sm open-modal-btn" data-project="traffic-jam-escape">
+                                    <i class="fa-solid fa-circle-info"></i> Details & Gallery
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header-row">
+                                <h3 class="card-title">Unblock Cars: Traffic Control</h3>
+                                <span class="engine-tag"><i class="fa-solid fa-cube"></i> Unity Mobile</span>
+                            </div>
+                            <p class="card-text">
+                                Strategic car escape & traffic clearing puzzle game built with custom Raycast car movement, level generator pipelines, and dynamic obstacle pathfinding.
+                            </p>
+                            <div class="card-tags">
+                                <span>Hybrid Casual</span>
+                                <span>Traffic Control</span>
+                                <span>Car Escape</span>
+                                <span>Raycast Physics</span>
+                            </div>
+                            <div class="card-footer-actions">
+                                <button class="btn btn-text open-modal-btn" data-project="traffic-jam-escape">
+                                    Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <div class="card-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.playbliss.traffic.jam.car.escape.out" target="_blank" title="Google Play Store"><i class="fa-brands fa-google-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5 (Hybrid Casual: Block Puzzle Jam) -->
+                    <div class="project-card" data-category="hybrid">
+                        <div class="card-media animated-game-preview" data-preview="assets/images/block-puzzle-jam-cover.jpg,assets/images/block-puzzle-jam-ss-2.jpg,assets/images/block-puzzle-jam-ss-3.jpg,assets/images/block-puzzle-jam-ss-4.jpg,assets/images/block-puzzle-jam-ss-5.jpg">
+                            <img src="assets/images/block-puzzle-jam-cover.jpg" alt="Block Puzzle Jam" class="preview-img-target" loading="lazy">
+                            <div class="card-badge"><i class="fa-solid fa-gamepad"></i> Hybrid Casual</div>
+                            <div class="live-gif-pill"><i class="fa-solid fa-play"></i> LIVE PREVIEW</div>
+                            <div class="card-overlay">
+                                <button class="btn btn-cyan btn-sm open-modal-btn" data-project="block-puzzle-jam">
+                                    <i class="fa-solid fa-circle-info"></i> Details & Gallery
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header-row">
+                                <h3 class="card-title">Block Puzzle Jam</h3>
+                                <span class="engine-tag"><i class="fa-solid fa-cube"></i> Unity Mobile</span>
+                            </div>
+                            <p class="card-text">
+                                Addictive block grid matching & spatial puzzle game engineered with combo scoring algorithms, responsive drag-and-drop touch input, and mobile performance tuning.
+                            </p>
+                            <div class="card-tags">
+                                <span>Hybrid Casual</span>
+                                <span>Block Puzzle</span>
+                                <span>Grid Matching</span>
+                                <span>Combo Engine</span>
+                            </div>
+                            <div class="card-footer-actions">
+                                <button class="btn btn-text open-modal-btn" data-project="block-puzzle-jam">
+                                    Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <div class="card-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.playbliss.blockpuzzlejamgame" target="_blank" title="Google Play Store"><i class="fa-brands fa-google-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 (Hybrid Casual: Find Puppy) -->
+                    <div class="project-card" data-category="hybrid">
+                        <div class="card-media animated-game-preview" data-preview="assets/images/find-the-dog-cover.jpg,assets/images/find-the-dog-ss-2.jpg,assets/images/find-the-dog-ss-3.jpg,assets/images/find-the-dog-ss-4.jpg,assets/images/find-the-dog-ss-5.jpg">
+                            <img src="assets/images/find-the-dog-cover.jpg" alt="Find Puppy: Spot Hidden Object" class="preview-img-target" loading="lazy">
+                            <div class="card-badge"><i class="fa-solid fa-gamepad"></i> Hybrid Casual</div>
+                            <div class="live-gif-pill"><i class="fa-solid fa-play"></i> LIVE PREVIEW</div>
+                            <div class="card-overlay">
+                                <button class="btn btn-cyan btn-sm open-modal-btn" data-project="find-the-dog">
+                                    <i class="fa-solid fa-circle-info"></i> Details & Gallery
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header-row">
+                                <h3 class="card-title">Find Puppy: Hidden Object</h3>
+                                <span class="engine-tag"><i class="fa-solid fa-cube"></i> Unity Mobile</span>
+                            </div>
+                            <p class="card-text">
+                                Engaging hidden object & visual search adventure featuring zoomable scene rendering, hint trigger systems, and level progression frameworks.
+                            </p>
+                            <div class="card-tags">
+                                <span>Hybrid Casual</span>
+                                <span>Hidden Object</span>
+                                <span>Search & Find</span>
+                                <span>Level Progression</span>
+                            </div>
+                            <div class="card-footer-actions">
+                                <button class="btn btn-text open-modal-btn" data-project="find-the-dog">
+                                    Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <div class="card-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.playbliss.findthedog" target="_blank" title="Google Play Store"><i class="fa-brands fa-google-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 7 (Hybrid Casual: Sort Puzzle Goods Match) -->
+                    <div class="project-card" data-category="hybrid">
+                        <div class="card-media animated-game-preview" data-preview="assets/images/goods-sorting-cover.jpg,assets/images/goods-sorting-ss-2.jpg,assets/images/goods-sorting-ss-3.jpg,assets/images/goods-sorting-ss-4.jpg,assets/images/goods-sorting-ss-5.jpg">
+                            <img src="assets/images/goods-sorting-cover.jpg" alt="Sort Puzzle: Goods Match" class="preview-img-target" loading="lazy">
+                            <div class="card-badge"><i class="fa-solid fa-gamepad"></i> Hybrid Casual</div>
+                            <div class="live-gif-pill"><i class="fa-solid fa-play"></i> LIVE PREVIEW</div>
+                            <div class="card-overlay">
+                                <button class="btn btn-cyan btn-sm open-modal-btn" data-project="goods-sorting">
+                                    <i class="fa-solid fa-circle-info"></i> Details & Gallery
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header-row">
+                                <h3 class="card-title">Sort Puzzle: Goods Match</h3>
+                                <span class="engine-tag"><i class="fa-solid fa-cube"></i> Unity Mobile</span>
+                            </div>
+                            <p class="card-text">
+                                3D shelf sorting & goods matching simulator featuring 3D item physics, shelf placement logic, combo cascades, and smooth 60 FPS mobile rendering.
+                            </p>
+                            <div class="card-tags">
+                                <span>Hybrid Casual</span>
+                                <span>3D Goods Match</span>
+                                <span>Shelf Sorting</span>
+                                <span>Physics Grid</span>
+                            </div>
+                            <div class="card-footer-actions">
+                                <button class="btn btn-text open-modal-btn" data-project="goods-sorting">
+                                    Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <div class="card-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.playbliss.goodsortinggame" target="_blank" title="Google Play Store"><i class="fa-brands fa-google-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills & Engine Matrix -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-subtitle"><i class="fa-solid fa-microchip"></i> ENGINE & ARCHITECTURE</div>
+                    <h2 class="section-title">Technical Skill <span class="gradient-text-cyan">Matrix</span></h2>
+                    <p class="section-desc">Core competencies across Unity engine architecture, gameplay programming, graphics pipelines, and production tools.</p>
+                </div>
+
+                <div class="skills-grid">
+
+                    <!-- Skill Category 1 -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box cyan"><i class="fa-solid fa-code"></i></div>
+                            <div>
+                                <h3>C# Gameplay & Architecture</h3>
+                                <p class="skill-sub">Clean Architecture & Design Patterns</p>
+                            </div>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="fa-solid fa-square-check skill-icon cyan"></i> <span>C# 12 / .NET 8 Advanced Mechanics</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon cyan"></i> <span>Dependency Injection (Zenject / VContainer)</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon cyan"></i> <span>ScriptableObject Architecture & Event Channels</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon cyan"></i> <span>Addressables & Asset Management</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Category 2 -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <div>
+                                <h3>Graphics & Tech Art</h3>
+                                <p class="skill-sub">Shaders, VFX & Rendering</p>
+                            </div>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="fa-solid fa-square-check skill-icon purple"></i> <span>URP & HDRP Rendering Pipelines</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon purple"></i> <span>Unity Shader Graph & HLSL Custom Nodes</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon purple"></i> <span>VFX Graph & Particle Physics</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon purple"></i> <span>Lighting, Lightmapping & Post-Processing</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Category 3 -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box gold"><i class="fa-solid fa-bolt"></i></div>
+                            <div>
+                                <h3>Systems & Performance</h3>
+                                <p class="skill-sub">Optimization & Physics</p>
+                            </div>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="fa-solid fa-square-check skill-icon gold"></i> <span>Unity Profiler & Frame Debugger</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon gold"></i> <span>PhysX 3D & 2D Physics Tuning</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon gold"></i> <span>C# Job System & Burst Compiler</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon gold"></i> <span>NavMesh & AI State Machines</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Category 4 -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box emerald"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <div>
+                                <h3>Editor Tools & Networking</h3>
+                                <p class="skill-sub">Multiplayer & Workflow</p>
+                            </div>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="fa-solid fa-square-check skill-icon emerald"></i> <span>Unity Editor Extensions & Custom Inspectors</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon emerald"></i> <span>Netcode for GameObjects & Photon</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon emerald"></i> <span>Git / PlasticSCM / Perforce Integration</span></li>
+                            <li><i class="fa-solid fa-square-check skill-icon emerald"></i> <span>FMOD / Wwise Audio Middleware</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Shipped Titles Timeline -->
+        <section id="experience" class="section timeline-section">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-subtitle"><i class="fa-solid fa-code-branch"></i> CAREER PATH</div>
+                    <h2 class="section-title">Work Experience & <span class="gradient-text-cyan">Shipped Titles</span></h2>
+                    <p class="section-desc">Track record in game studios and independent commercial game releases.</p>
+                </div>
+
+                <div class="timeline">
+
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Aug 2025 - Present</div>
+                        <div class="timeline-content">
+                            <span class="badge badge-cyan">Current Role</span>
+                            <h3>Unity Game Developer (PC)</h3>
+                            <div class="company"><i class="fa-solid fa-gamepad"></i> Wavecrashers</div>
+                            <p>
+                                Engineering core 3D gameplay mechanics for <em>Wavecrashers</em> — a 3-player co-op strategy game blending hero mastery, MOBA-style combat mechanics, and lane defense wave spawner systems in Unity URP.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Wavecrashers</span><span>Unity URP</span><span>3-Player Co-Op</span><span>Hero Synergies</span><span>Lane Defense AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Nov 2024 - May 2025</div>
+                        <div class="timeline-content">
+                            <h3>Unity Game Developer (Hybrid-Casual)</h3>
+                            <div class="company"><i class="fa-solid fa-mobile-screen-button"></i> Hybrid-Casual Mobile Suite</div>
+                            <p>
+                                Engineered and shipped 4 hybrid-casual mobile titles (<em>Unblock Cars: Traffic Control</em>, <em>Block Puzzle Jam</em>, <em>Find Puppy: Spot Hidden Object</em>, and <em>Sort Puzzle: Goods Match</em>). Developed 3D shelf placement physics, block grid combo engines, and raycast vehicle movement.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Unblock Cars</span><span>Block Puzzle Jam</span><span>Find Puppy</span><span>Goods Match</span><span>Raycast Physics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Nov 2023 - Jun 2024</div>
+                        <div class="timeline-content">
+                            <h3>Freelance Unity Developer & Game Designer</h3>
+                            <div class="company"><i class="fa-solid fa-wand-magic-sparkles"></i> Tactical Turn-Based RPG & Unity Optimization</div>
+                            <p>
+                                Developed a <em>Darkest Dungeon</em>-inspired turn-based tactical RPG in C#. Collaborated with GameDev.Guru on technical video content and articles focusing on advanced Unity Game Optimization.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Turn-Based RPG</span><span>Tactical Combat</span><span>Unity Optimization</span><span>C# Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">May 2022 - Sep 2023</div>
+                        <div class="timeline-content">
+                            <h3>Unity Game Developer (Casual)</h3>
+                            <div class="company"><i class="fa-solid fa-seedling"></i> Fiona's Farm</div>
+                            <p>
+                                Developed gameplay systems for <em>Fiona's Farm</em>, an adventure quest & puzzle title with 100K+ daily active users. Built dynamic LiveOps event architecture, time-limited seasonal challenge events, adventure quest story triggers, and 60 FPS mobile memory optimization.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Fiona's Farm</span><span>LiveOps Events</span><span>Timed Events</span><span>Adventure Quests</span><span>Mobile Opt</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Oct 2021 - May 2022</div>
+                        <div class="timeline-content">
+                            <h3>Unity Game Developer (Hypercasual)</h3>
+                            <div class="company"><i class="fa-solid fa-bolt"></i> Mobile Rapid Prototyping</div>
+                            <p>
+                                Developed rapid mobile game prototypes, physics-based touch interaction systems, level progression pipelines, and performance tuning for high-velocity iteration cycles.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Rapid Prototyping</span><span>Touch Controls</span><span>Level Progression</span><span>Mobile Performance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & GitHub Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-subtitle"><i class="fa-solid fa-paper-plane"></i> GET IN TOUCH</div>
+                    <h2 class="section-title">Let's Build Something <span class="gradient-text-cyan">Epic Together</span></h2>
+                    <p class="section-desc">Open for full-time Unity Developer positions, game studio contracts, or technical art consulting.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out via email or connect on social media platforms!</p>
+
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <div class="icon-box cyan"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <span class="lbl">Direct Email</span>
+                                    <a href="mailto:omerakcali99@gmail.com" class="val">omerakcali99@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon-box purple"><i class="fa-brands fa-linkedin"></i></div>
+                                <div>
+                                    <span class="lbl">LinkedIn Profile</span>
+                                    <a href="https://linkedin.com/in/omerakcali/" target="_blank" class="val">linkedin.com/in/omerakcali/</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon-box gold"><i class="fa-brands fa-discord"></i></div>
+                                <div>
+                                    <span class="lbl">Discord Handle</span>
+                                    <span class="val">baddog42</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="github-pages-badge-box">
+                            <i class="fa-brands fa-github"></i>
+                            <div>
+                                <h4>GitHub Pages Ready</h4>
+                                <p>This portfolio website is open source and optimized for GitHub Pages hosting.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="form-name">Your Name</label>
+                            <input type="text" id="form-name" name="name" placeholder="e.g. Sarah Jenkins" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Your Email</label>
+                            <input type="email" id="form-email" name="email" placeholder="e.g. sarah@gamestudio.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-type">Inquiry Type</label>
+                            <select id="form-type" name="inquiry_type">
+                                <option value="job">Full-time Unity Engineer Role</option>
+                                <option value="contract">Freelance / Contract Project</option>
+                                <option value="liveops">LiveOps & Timed Events Consulting</option>
+                                <option value="hello">Just Saying Hi!</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-msg">Message</label>
+                            <textarea id="form-msg" name="message" rows="4" placeholder="Tell me about your project, game concept, or team..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gradient-cyan btn-block btn-lg">
+                            <i class="fa-solid fa-paper-plane"></i> Transmit Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hud-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="brand-logo">
+                    <span class="logo-icon"><i class="fa-solid fa-cubes-stacked"></i></span>
+                    <span class="logo-text">OMER<span class="highlight">.UNITY</span></span>
+                </a>
+                <p>© 2026 Omer Akcali. All Rights Reserved. Hosted on GitHub Pages.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#hero">Top</a>
+                <a href="#projects">Games</a>
+                <a href="#skills">Skills</a>
+                <a href="https://linkedin.com/in/omerakcali/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-backdrop" id="project-modal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-content" id="modal-content-area">
+                <!-- Dynamically injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Download Modal -->
+    <div class="modal-backdrop" id="cv-modal">
+        <div class="modal-dialog small">
+            <button class="modal-close-btn" id="cv-modal-close">&times;</button>
+            <div class="cv-modal-body">
+                <i class="fa-solid fa-file-pdf cv-icon"></i>
+                <h3>Omer Akcali - Unity Developer Resume</h3>
+                <p>Download full technical resume (PDF) or view key highlights.</p>
+                <div class="cv-modal-actions">
+                    <a href="assets/resume.pdf" download="Omer_Akcali_Resume.pdf" class="btn btn-gradient-cyan">
+                        <i class="fa-solid fa-download"></i> Download PDF Resume
+                    </a>
+                    <button class="btn btn-surface" id="cv-close-action">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Element -->
+    <div class="toast-notification" id="toast-notification">
+        <i class="fa-solid fa-circle-check toast-icon" id="toast-icon"></i>
+        <span id="toast-msg">Email copied to clipboard!</span>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

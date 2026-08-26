@@ -1,0 +1,57 @@
+[
+  {
+    "id": "com.gg.traffic.hero.jam.car.puzzle.games",
+    "short_name": "traffic-hero",
+    "title": "Traffic Hero: Car Puzzle",
+    "cover": "assets/images/traffic-hero-cover.jpg",
+    "screenshots": [
+      "assets/images/traffic-hero-ss-1.jpg",
+      "assets/images/traffic-hero-ss-2.jpg"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=com.gg.traffic.hero.jam.car.puzzle.games"
+  },
+  {
+    "id": "com.playbliss.blockpuzzlejamgame",
+    "short_name": "block-puzzle-jam",
+    "title": "Block Puzzle Jam",
+    "cover": "assets/images/block-puzzle-jam-cover.jpg",
+    "screenshots": [
+      "assets/images/block-puzzle-jam-ss-1.jpg",
+      "assets/images/block-puzzle-jam-ss-2.jpg"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=com.playbliss.blockpuzzlejamgame"
+  },
+  {
+    "id": "com.playbliss.findthedog",
+    "short_name": "find-the-dog",
+    "title": "Find Puppy: Spot Hidden Object",
+    "cover": "assets/images/find-the-dog-cover.jpg",
+    "screenshots": [
+      "assets/images/find-the-dog-ss-1.jpg",
+      "assets/images/find-the-dog-ss-2.jpg"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=com.playbliss.findthedog"
+  },
+  {
+    "id": "com.playbliss.goodsortinggame",
+    "short_name": "goods-sorting",
+    "title": "Sort puzzle: Goods match",
+    "cover": "assets/images/goods-sorting-cover.jpg",
+    "screenshots": [
+      "assets/images/goods-sorting-ss-1.jpg",
+      "assets/images/goods-sorting-ss-2.jpg"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=com.playbliss.goodsortinggame"
+  },
+  {
+    "id": "com.playbliss.traffic.jam.car.escape.out",
+    "short_name": "traffic-jam-escape",
+    "title": "Unblock Cars: Traffic Control",
+    "cover": "assets/images/traffic-jam-escape-cover.jpg",
+    "screenshots": [
+      "assets/images/traffic-jam-escape-ss-1.jpg",
+      "assets/images/traffic-jam-escape-ss-2.jpg"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=com.playbliss.traffic.jam.car.escape.out"
+  }
+]
