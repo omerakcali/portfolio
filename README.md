@@ -29,7 +29,7 @@ Publishing your portfolio on GitHub Pages takes less than 2 minutes:
    git add .
    git commit -m "Initial release of Unity portfolio"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
+   git remote add origin https://github.com/omerakcali/<your-username>/<your-username>.github.io.git
    git push -u origin main
    ```
 3. GitHub Pages will automatically publish your site live at `https://<your-username>.github.io`!
